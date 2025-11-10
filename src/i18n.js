@@ -1,33 +1,29 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+// JSON fayllarni import qilamiz
+import uzTranslation from "./locales/uz.json";
+import ruTranslation from "./locales/ru.json";
+import enTranslation from "./locales/en.json";
 
 const resources = {
-  uz: {
-    translation: {
-      welcome: " Xush kelibsiz react-i18next"
-    }
-  },
-  ru: {
-    translation: {
-     welcome: "Dobro pojalovat na rus react-i18next"
-    }
-  },
-  en: {
-    translation: {
-      welcome: "Welcome to React and react-i18next"
-    }
-  },
+  uz: { translation: uzTranslation },
+  ru: { translation: ruTranslation },
+  en: { translation: enTranslation },
 };
 
+// LocalStorage dan saqlangan tilni olish yoki 'uz' ni default qilish
+const savedLanguage = localStorage.getItem("language") || "uz";
+
 i18n
-  .use(initReactI18next) 
+  .use(initReactI18next)
   .init({
     resources,
-    lng: "en", 
+    lng: savedLanguage,
+    fallbackLng: "uz",
     interpolation: {
-      escapeValue: false 
-    }
+      escapeValue: false,
+    },
   });
 
-  export default i18n;
+export default i18n;

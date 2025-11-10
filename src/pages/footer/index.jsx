@@ -1,67 +1,70 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Ijtimoiy_tarmoqlar from "../../assets/images/ijtimoiy_tarmoq.svg";
 import play_m from "../../assets/images/Play_m.svg";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-bold text-gray-900 mb-4">Biz haqimizda</h3>
+            <h3 className="font-bold text-gray-900 mb-4">{t('aboutUs')}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-600 hover:text-purple-600 text-sm">
-                  Topshirish punktlari
+                  {t('pickupPoints')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-purple-600 text-sm">
-                  Vakansiyalar
+                  {t('vacancies')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold text-gray-900 mb-4">Foydalarga</h3>
+            <h3 className="font-bold text-gray-900 mb-4">{t('forUsers')}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-600 hover:text-purple-600 text-sm">
-                  Biz bilan bog'lanish
+                  {t('contactUs')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-purple-600 text-sm">
-                  Savol-Javob
+                  {t('faqFooter')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold text-gray-900 mb-4">Tadbirkorlarga</h3>
+            <h3 className="font-bold text-gray-900 mb-4">{t('forEntrepreneurs')}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-600 hover:text-purple-600 text-sm">
-                  Uzumda soting
+                  {t('sellOnUzum')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-purple-600 text-sm">
-                  Sotuvchi kabinetiga kirish
+                  {t('sellerCabinet')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:text-purple-600 text-sm">
-                  Topshirish punktini ochish
+                  {t('openPickupPoint')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold text-gray-900 mb-4">Ilovani olish</h3>
+            <h3 className="font-bold text-gray-900 mb-4">{t('getApp')}</h3>
             <div className="space-y-3">
               <div className="flex gap-3">
                 <a href="#" className="hover:opacity-80 transition-opacity">
@@ -80,7 +83,7 @@ const Footer = () => {
               </div>
 
               <div className="mt-6">
-                <h4 className="font-bold text-gray-900 mb-3">Uzum ijtimoiy tarmoqlarda</h4>
+                <h4 className="font-bold text-gray-900 mb-3">{t('uzumSocialMedia')}</h4>
                 <img src={Ijtimoiy_tarmoqlar} alt="Ijtimoiy tarmoqlar" className="" />
               </div>
             </div>
@@ -91,14 +94,14 @@ const Footer = () => {
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex gap-6">
               <a href="#" className="text-sm text-gray-600 hover:text-purple-600">
-                Maxfiylik qaydoi
+                {t('privacyPolicy')}
               </a>
               <a href="#" className="text-sm text-gray-600 hover:text-purple-600">
-                Foyda keltiradigan
+                {t('userAgreement')}
               </a>
             </div>
             <p className="text-sm text-gray-500">
-              ©2025 XX MCHJ "UZUM MARKET". STIR 309376127. Barcha huquqlar himoyalangan
+              {t('copyright')}
             </p>
           </div>
         </div>

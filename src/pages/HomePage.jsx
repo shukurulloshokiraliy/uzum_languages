@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useCart } from '../cartContext/CartContext';
 import cart from "../assets/images/cart.svg";
 
@@ -97,6 +98,7 @@ const BannerSlider2 = () => {
 };
 
 const HomePage = () => {
+  const { t } = useTranslation();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [productQuantities, setProductQuantities] = useState({});
@@ -168,7 +170,7 @@ const HomePage = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl text-purple-600">Yuklanmoqda...</div>
+        <div className="text-xl text-purple-600">{t('loading')}</div>
       </div>
     );
   }
@@ -179,7 +181,7 @@ const HomePage = () => {
 
       <div className="py-6">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-2xl font-bold mb-6">Mahsulotlar</h1>
+          <h1 className="text-2xl font-bold mb-6">{t('products')}</h1>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {products.map((product) => {
@@ -218,7 +220,7 @@ const HomePage = () => {
                     <div className="flex items-center gap-1 mb-3">
                       <StarIcon />
                       <span className="text-sm font-medium">{product.rating}</span>
-                      <span className="text-xs text-gray-500">({product.stock} ta baholash)</span>
+                      <span className="text-xs text-gray-500">({product.stock} {t('reviews')})</span>
                     </div>
 
                     <div className="flex-1"></div>
@@ -226,7 +228,7 @@ const HomePage = () => {
                     <div className="mb-2">
                       <div className="inline-block bg-yellow-50 px-2 py-1 rounded-md">
                         <span className="text-xs font-semibold text-gray-900">
-                          {monthlyPayment.toLocaleString()} so'm/oyiga
+                          {monthlyPayment.toLocaleString()} {t('perMonth')}
                         </span>
                       </div>
                     </div>
@@ -234,11 +236,11 @@ const HomePage = () => {
                     <div className="mb-3">
                       {discount > 0 && (
                         <div className="text-xs text-gray-400 line-through mb-1">
-                          {originalPrice.toLocaleString()} so'm
+                          {originalPrice.toLocaleString()} {t('sum')}
                         </div>
                       )}
                       <div className="text-lg font-bold text-gray-900">
-                        {Math.round(product.price).toLocaleString()} so'm
+                        {Math.round(product.price).toLocaleString()} {t('sum')}
                       </div>
                     </div>
 
@@ -248,7 +250,7 @@ const HomePage = () => {
                         className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors"
                       >
                         <img src={cart} alt="cart" className="h-6" />
-                        <span>Ertaga</span>
+                        <span>{t('tomorrow')}</span>
                       </button>
                     ) : (
                       <div className="flex items-center gap-2 border border-purple-600 rounded-xl bg-purple-50">
