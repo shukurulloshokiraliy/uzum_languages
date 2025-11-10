@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-// JSON fayllarni import qilamiz
+
 import uzTranslation from "./locales/uz.json";
 import ruTranslation from "./locales/ru.json";
 import enTranslation from "./locales/en.json";
@@ -12,7 +12,7 @@ const resources = {
   en: { translation: enTranslation },
 };
 
-// LocalStorage dan saqlangan tilni olish yoki 'uz' ni default qilish
+
 const savedLanguage = localStorage.getItem("language") || "uz";
 
 i18n

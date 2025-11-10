@@ -93,7 +93,7 @@ const Header = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center gap-2">
             <NavLink to="/">
-              <img src={Logo} alt="Uzum Market" className="h-8 mr-4" />
+              <img src={Logo} alt="Uzum Market" className="h-8 mr-8" />
             </NavLink>
           </div>
 
